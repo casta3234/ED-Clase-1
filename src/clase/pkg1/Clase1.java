@@ -54,7 +54,7 @@ public class Clase1 {
         if (s.length()% 2 == 0 ){
            String pm = s.substring(0, (s.length()/2));
            String sm = s.substring((s.length()/2),s.length() );
-            if (pm==sm){
+            if (pm.equals(sm)){
                 System.out.println("es palindromo");
             }
             else
@@ -63,7 +63,7 @@ public class Clase1 {
         else{
             String pm = s.substring(0, (s.length()/2));
             String sm = s.substring((s.length()/2)+1,s.length() );
-            if (pm==sm){
+            if (pm.equals(sm)){
                 System.out.println("es palindromo");
             }
             else
