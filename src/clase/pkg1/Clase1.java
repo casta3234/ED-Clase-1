@@ -5,6 +5,8 @@
  */
 package clase.pkg1;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Estudiante
@@ -44,19 +46,45 @@ public class Clase1 {
             printInv(s.substring(1));
             System.out.print(s.charAt(0));
         }
-    } 
-    public static void main(String[] args) {
-        System.out.println(factorial(5));
-        System.out.println(fibonnaci(10));
-        System.out.println(pascal(4,2));
-        for(int i =0; i<20 ;i++){
-            for(int j=0; j<=i;j++){
-                System.out.print(pascal(i, j)+" ");
+    }
+    public static void palindromo () {
+       String s;
+       Scanner t = new Scanner(System.in);
+       s = t.next();
+        if (s.length()% 2 == 0 ){
+           String pm = s.substring(0, (s.length()/2));
+           String sm = s.substring((s.length()/2),s.length() );
+            if (pm==sm){
+                System.out.println("es palindromo");
             }
-            System.out.print("\n");   
-            
+            else
+                System.out.println("no es palindromo");
         }
-        printInv("hola mundo");
+        else{
+            String pm = s.substring(0, (s.length()/2));
+            String sm = s.substring((s.length()/2)+1,s.length() );
+            if (pm==sm){
+                System.out.println("es palindromo");
+            }
+            else
+                System.out.println("no es palindromo");
+        }
+        
+    }
+    public static void main(String[] args) {
+        //System.out.println(factorial(5));
+        //System.out.println(fibonnaci(10));
+        //System.out.println(pascal(4,2));
+        //for(int i =0; i<20 ;i++){
+        //    for(int j=0; j<=i;j++){
+        //        System.out.print(pascal(i, j)+" ");
+        //    }
+        //    System.out.print("\n");   
+        //    
+        //}
+        //printInv("hola mundo");
+        palindromo();
+        
     }
     
 }
