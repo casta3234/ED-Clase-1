@@ -38,13 +38,14 @@ public class Clase1 {
     else
         return pascal (n-1,k-1)+ pascal(n-1,k);
     }
-    public static void printInv(String s){
+    public static String printInv(String s){
         if (s.length()==1){
-            System.out.print(s);
+            return s;
         }
         else{
             printInv(s.substring(1));
-            System.out.print(s.charAt(0));
+            String si += (s.charAt(0));
+            return si;
         }
     }
     public static void palindromo () {
@@ -53,7 +54,7 @@ public class Clase1 {
        s = t.next();
         if (s.length()% 2 == 0 ){
            String pm = s.substring(0, (s.length()/2));
-           String sm = s.substring((s.length()/2),s.length() );
+           String sm = printInv(s.substring((s.length()/2),s.length() ));
             if (pm.equals(sm)){
                 System.out.println("es palindromo");
             }
@@ -62,7 +63,7 @@ public class Clase1 {
         }
         else{
             String pm = s.substring(0, (s.length()/2));
-            String sm = s.substring((s.length()/2)+1,s.length() );
+            String sm = printInv(s.substring((s.length()/2)+1,s.length() ));
             if (pm.equals(sm)){
                 System.out.println("es palindromo");
             }
