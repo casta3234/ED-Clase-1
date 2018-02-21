@@ -5,6 +5,7 @@
  */
 package clase.pkg1;
 
+
 import java.util.Scanner;
 
 /**
@@ -39,19 +40,17 @@ public class Clase1 {
         return pascal (n-1,k-1)+ pascal(n-1,k);
     }
     public static String printInv(String s){
-        if (s.length()==1){
+        
+        if (s.length()<=1){
             return s;
         }
-        else{
-            printInv(s.substring(1));
-            String si += (s.charAt(0));
-            return si;
-        }
-    }
+        return printInv(s.substring(1))+ s.charAt(0);
+}
     public static void palindromo () {
        String s;
        Scanner t = new Scanner(System.in);
-       s = t.next();
+       s = t.nextLine();
+       s = s.replaceAll(" ", "");
         if (s.length()% 2 == 0 ){
            String pm = s.substring(0, (s.length()/2));
            String sm = printInv(s.substring((s.length()/2),s.length() ));
@@ -83,9 +82,8 @@ public class Clase1 {
         //    System.out.print("\n");   
         //    
         //}
-        //printInv("hola mundo");
         palindromo();
-        
+       
     }
     
 }
